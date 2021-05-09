@@ -1,0 +1,39 @@
+<p id="notice"></p>
+
+<%= render 'books/info', user: @user, book: @books %>
+
+    <div class="col-md-8 offset-md-1">
+      <h2>Book detail</h2>
+      <table class="table table-hover table-inverse">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Title</th>
+            <th>Opinion</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <%= attachment_image_tag @book.user, :profile_image, :fill, 40, 40, fallback: "unnamed.jpg", size: '40x40' %>
+              <%= link_to @user.name, user_path(@user) %>
+            </td>
+            <td>
+            <%= link_to book_path(@book) do %>
+              <%= @book.title %>
+            <% end %>
+            </td>
+            <td><%= @book.opinion %></td>
+            <td>
+            <% if current_user.id == @book.user.id %>
+            <%= link_to "Edit", edit_book_path(@book), class: "btn btn-sm btn-success" %>
+            <%= link_to "Destroy", book_path(@book), method: :delete, class: "btn btn-sm btn-danger" %>
+            </td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
