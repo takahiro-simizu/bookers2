@@ -19,7 +19,7 @@
       <div class="row">
         <%= link_to "", edit_user_path(user), class: "btn btn-outline-secondary btn-block fas fa-user-cog" %>
       </div>
-      <h2 class="mt-3">New Book</h2>
+      <h2 class="mt-3">New book</h2>
       <%= form_with model: book, url: books_path, local: true do |f| %>
       <div class="field">
         <%= f.label :Title %><br />
@@ -27,7 +27,7 @@
       </div>
       <div class="field">
         <%= f.label :Opinion %><br />
-        <%= f.text_area :opinion %>
+        <%= f.text_area :body %>
       </div>
       <%= f.submit "Create Book", class: "btn btn-success" %>
       <% end %>

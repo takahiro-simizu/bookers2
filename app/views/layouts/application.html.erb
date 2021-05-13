@@ -33,7 +33,7 @@
                 <%=link_to " Books", books_path, class: 'fas fa-book-open nav-link text-light' %>
               </li>
               <li class="nav-item">
-                <%=link_to " logout", destroy_user_session_path, method: :delete, class: 'fas fa-sign-out-alt nav-link text-light' %>
+                <%=link_to " logout", destroy_user_session_path, method: :delete, class: 'fas fa-sign-out-alt nav-link text-light', notice: "Signed out successfully." %>
               </li>
             <% else %>
               <li class="nav-item">
